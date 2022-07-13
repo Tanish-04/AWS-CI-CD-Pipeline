@@ -1,7 +1,29 @@
+# AWS CI-CD Pipeline
 
-# Welcome to your CDK Python project!
+## Project Overview!
+This project is based on two different lambda functions being used for two different tasks being:
+1. Checking the health of 4 different websites by monitoring their latency and availability.
+2. Putting the generated value in to the dynamodb.
 
-This is a blank project for CDK development with Python.
+The technologies used are:
+1. AWS CDK
+2. AWS LAMBDA
+3. AWS SNS
+4. AWS DYNAMODB
+5. AWS ALARMS
+6. AWS PIPELINES
+7. PYTEST
+8. PYTHON
+
+The project has two stages in it
+1. betaStage
+2. prodStage
+
+betaStage will run after a unit test.
+prodStage will need a mannual approval to run.
+
+Manual Steps and Roll back has also been integrated.
+furthermore to run this project need to complete the following steps->>
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
@@ -15,7 +37,7 @@ you can create the virtualenv manually.
 To manually create a virtualenv on MacOS and Linux:
 
 ```
-$ python3 -m venv .venv
+$ python -m venv .venv
 ```
 
 After the init process completes and the virtualenv is created, you can use the following
@@ -55,4 +77,11 @@ command.
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-Enjoy!
+
+After sythesis give the following command to deploy the the cloud formation template
+
+```
+$ cdk deploy
+```
+The created pipeline can be seen in the pipelines on AWS Codepipeline services
+
